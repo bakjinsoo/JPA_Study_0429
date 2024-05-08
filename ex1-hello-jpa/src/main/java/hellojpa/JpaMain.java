@@ -30,10 +30,17 @@ public class JpaMain {
 //            //영속
 //            em.persist(member);
             //영속
-            Member findMember1=em.find(Member.class,101L);
-            Member findMember2 =em.find(Member.class,101L);
-            System.out.println("result = "+(findMember1==findMember2));
-            
+//            Member findMember1=em.find(Member.class,101L);
+//            Member findMember2 =em.find(Member.class,101L);
+//            System.out.println("result = "+(findMember1==findMember2));
+//            Member member1=new Member(300L,"C");
+//            Member member2=new Member(360L,"D");
+//            em.persist(member1);
+//            em.persist(member2);
+            Member member=new Member();
+
+            member.setUsername("C");
+            em.persist(member);
             tx.commit();
         }
         catch (Exception e){
