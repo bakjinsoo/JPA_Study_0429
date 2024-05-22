@@ -13,7 +13,10 @@ public class Team {
     private String name;
     @OneToMany(mappedBy = "team")//반대편 사이트에는 team변수와 연결되어 있다. 연관관계의 주인
     private List<Member> members=new ArrayList<>();
-
+    public void addMember(Member member) {
+        member.setTeam(this);
+        members.add(member);
+    }
     public List<Member> getMembers() {
         return members;
     }
